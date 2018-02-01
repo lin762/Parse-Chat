@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     
     let usernameAlertController = UIAlertController(title: "Error", message: "Please enter a username", preferredStyle: .alert)
     let passwordAlertController = UIAlertController(title: "Error", message: "Please enter a password", preferredStyle: .alert)
-    let makeAlertController = UIAlertController(title: "Error", message: "Please an account", preferredStyle: .alert)
     let credentialAlertController = UIAlertController(title: "Error", message: "Incorrect password or username", preferredStyle: .alert)
 
     override func viewDidLoad() {
@@ -24,7 +23,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         usernameAlertController.addAction(OKAction)
         passwordAlertController.addAction(OKAction)
-        makeAlertController.addAction(OKAction)
         credentialAlertController.addAction(OKAction)
     }
 
@@ -60,12 +58,32 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onLogin(_ sender: Any) {
+        let newUser = PFUser()
         let username = usernameField.text ?? ""
         let password = passwordField.text ?? ""
+        
+        if (username.isEmpty){
+            present(usernameAlertController, animated: true) {
+               
+            }
+        }else{
+            newUser.username = username
+        }
+        //newUser.email = emailLabel.text
+        if (password.isEmpty){
+            present(passwordAlertController, animated: true) {
+                
+            }
+        }else{
+            newUser.password = password
+        }
         
         PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
             if let error = error {
                 print("User log in failed: \(error.localizedDescription)")
+                self.present(self.credentialAlertController, animated: true) {
+                    
+                }
             } else {
                 print("User logged in successfully")
                 // display view controller that needs to shown after successful login
