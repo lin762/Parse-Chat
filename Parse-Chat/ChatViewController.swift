@@ -48,6 +48,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print("Successfully retrieved \(objects!.count) scores.")
                 // Do something with the found objects
                 if let objects = objects {
+                    self.messages.removeAllObjects()
                     for object in objects {
                         self.messages.add(object)
                     }
