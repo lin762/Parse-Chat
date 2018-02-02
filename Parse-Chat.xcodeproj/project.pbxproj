@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6061D8FD0A69E728E9F69885 /* Pods_Parse_ChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 411DDD49B1EC5FA36D5AC641 /* Pods_Parse_ChatTests.framework */; };
 		830390F92023AC1F00F1AE09 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830390F82023AC1F00F1AE09 /* ChatViewController.swift */; };
+		830390FD2023BF9600F1AE09 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830390FC2023BF9600F1AE09 /* ChatCell.swift */; };
 		83F9130820228B250043A598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9130720228B250043A598 /* AppDelegate.swift */; };
 		83F9130A20228B250043A598 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F9130920228B250043A598 /* ViewController.swift */; };
 		83F9130D20228B250043A598 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F9130B20228B250043A598 /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		5E4A94DCF06E129B29821D7E /* Pods_Parse_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Parse_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EA75498C6F74F692CB0BDC /* Pods-Parse-ChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Parse-ChatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Parse-ChatUITests/Pods-Parse-ChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		830390F82023AC1F00F1AE09 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		830390FC2023BF9600F1AE09 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		83F9130420228B250043A598 /* Parse-Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Parse-Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F9130720228B250043A598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83F9130920228B250043A598 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,13 +141,14 @@
 		83F9130620228B250043A598 /* Parse-Chat */ = {
 			isa = PBXGroup;
 			children = (
+				830390FC2023BF9600F1AE09 /* ChatCell.swift */,
 				83F9130720228B250043A598 /* AppDelegate.swift */,
+				830390F82023AC1F00F1AE09 /* ChatViewController.swift */,
 				83F9130920228B250043A598 /* ViewController.swift */,
 				83F9130B20228B250043A598 /* Main.storyboard */,
 				83F9130E20228B250043A598 /* Assets.xcassets */,
 				83F9131020228B250043A598 /* LaunchScreen.storyboard */,
 				83F9131320228B250043A598 /* Info.plist */,
-				830390F82023AC1F00F1AE09 /* ChatViewController.swift */,
 			);
 			path = "Parse-Chat";
 			sourceTree = "<group>";
@@ -377,13 +380,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Parse-Chat/Pods-Parse-Chat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts-Swift/BoltsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+				"${BUILT_PRODUCTS_DIR}/ParseLiveQuery/ParseLiveQuery.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BoltsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ParseLiveQuery.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -464,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F9130A20228B250043A598 /* ViewController.swift in Sources */,
+				830390FD2023BF9600F1AE09 /* ChatCell.swift in Sources */,
 				830390F92023AC1F00F1AE09 /* ChatViewController.swift in Sources */,
 				83F9130820228B250043A598 /* AppDelegate.swift in Sources */,
 			);

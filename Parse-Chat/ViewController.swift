@@ -10,16 +10,17 @@ import UIKit
 import Parse
 
 class ViewController: UIViewController {
-    
+
     @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var usernameField: UITextField!
     
+    @IBOutlet weak var usernameField: UITextField!
     let usernameAlertController = UIAlertController(title: "Error", message: "Please enter a username", preferredStyle: .alert)
     let passwordAlertController = UIAlertController(title: "Error", message: "Please enter a password", preferredStyle: .alert)
     let credentialAlertController = UIAlertController(title: "Error", message: "Incorrect password or username", preferredStyle: .alert)
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         usernameAlertController.addAction(OKAction)
         passwordAlertController.addAction(OKAction)
