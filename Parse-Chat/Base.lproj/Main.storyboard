@@ -97,29 +97,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" id="fSO-uU-7Is" customClass="ChatCell" customModule="Parse_Chat" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatCell" rowHeight="75" id="fSO-uU-7Is" customClass="ChatCell" customModule="Parse_Chat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fSO-uU-7Is" id="ahp-E8-uJt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHU-Tk-Oob">
-                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHU-Tk-Oob">
+                                                    <rect key="frame" x="8" y="48.5" width="359" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktE-4V-mrU">
+                                                    <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="XHU-Tk-Oob" firstAttribute="top" secondItem="ahp-E8-uJt" secondAttribute="top" constant="8" id="9ZY-Fz-tiD"/>
+                                                <constraint firstAttribute="trailing" secondItem="ktE-4V-mrU" secondAttribute="trailing" constant="325" id="0q8-le-OpJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="XHU-Tk-Oob" secondAttribute="bottom" constant="8" id="ClR-DL-aEa"/>
+                                                <constraint firstItem="ktE-4V-mrU" firstAttribute="leading" secondItem="ahp-E8-uJt" secondAttribute="leading" constant="8" id="Ht2-IY-Y9p"/>
+                                                <constraint firstItem="ktE-4V-mrU" firstAttribute="top" secondItem="ahp-E8-uJt" secondAttribute="top" constant="8" id="I1x-sn-dOX"/>
                                                 <constraint firstAttribute="trailing" secondItem="XHU-Tk-Oob" secondAttribute="trailing" constant="8" id="JWj-b7-sTN"/>
+                                                <constraint firstItem="XHU-Tk-Oob" firstAttribute="top" secondItem="ktE-4V-mrU" secondAttribute="bottom" constant="8" id="Kex-6C-jV8"/>
                                                 <constraint firstItem="XHU-Tk-Oob" firstAttribute="leading" secondItem="ahp-E8-uJt" secondAttribute="leading" constant="8" id="raQ-dj-9Vf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="chatLabel" destination="XHU-Tk-Oob" id="tRT-2N-Ff2"/>
+                                            <outlet property="userLabel" destination="ktE-4V-mrU" id="P63-C0-ZFJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
