@@ -32,7 +32,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let chatMessage = PFObject(className: "Message")
         
         chatMessage["text"] = messageField.text ?? ""
-        chatMessage["user"] = PFUser.current()
+        chatMessage["user"] = PFUser.current()!
         chatMessage.saveInBackground { (success, error) in
             if success {
                 print("The message was saved!")
@@ -45,6 +45,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @objc func onTimer(){
         var query = PFQuery(className: "Message")
+        query.includeKey("user")
         query.findObjectsInBackground {
             (objects: [PFObject]?, error: Error?) -> Void in
             
@@ -72,13 +73,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let chatMessage = PFObject(className: "Message")
         let cell = messageTableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
         let m = messages[indexPath.row] as! PFObject
         let mes = m.object(forKey: "text") as! String
         cell.chatLabel.text = mes
-        if let user = chatMessage["user"] as? PFUser {
+        if let user = m["user"] as? PFUser {
             // User found! update username label with username
+            print(user.username)
             cell.userLabel.text = user.username
         } else {
             // No user found, set default username

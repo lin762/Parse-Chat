@@ -110,7 +110,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktE-4V-mrU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktE-4V-mrU">
                                                     <rect key="frame" x="8" y="8" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -118,7 +118,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ktE-4V-mrU" secondAttribute="trailing" constant="325" id="0q8-le-OpJ"/>
+                                                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="ktE-4V-mrU" secondAttribute="trailing" constant="325" id="0q8-le-OpJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="XHU-Tk-Oob" secondAttribute="bottom" constant="8" id="ClR-DL-aEa"/>
                                                 <constraint firstItem="ktE-4V-mrU" firstAttribute="leading" secondItem="ahp-E8-uJt" secondAttribute="leading" constant="8" id="Ht2-IY-Y9p"/>
                                                 <constraint firstItem="ktE-4V-mrU" firstAttribute="top" secondItem="ahp-E8-uJt" secondAttribute="top" constant="8" id="I1x-sn-dOX"/>
